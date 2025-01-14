@@ -1,0 +1,58 @@
+/* Main Form container */
+.teacher-form {
+  width: 400px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: fixed; /* Use fixed to ensure it stays in the center even if the page scrolls */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the form */
+  z-index: 10; /* Ensure it stays on top of the overlay */
+}
+
+/* Gray background overlay */
+.teacher-form::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1; /* Ensure it stays behind the form */
+}
+
+/* Form fields */
+.form-field {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+/* Checkbox grid */
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 checkboxes per row */
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+
+/* Submit button */
+.submit-button-div {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.submit-button{
+    background-color: #7071703a; 
+    border-radius: 20px;
+}
+
+/* Error messages */
+mat-error {
+  color: red;
+  font-size: 12px;
+  /* margin-top: 5px; */
+}

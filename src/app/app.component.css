@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Toolbar custom style */
+.custom-toolbar {
+  background-color: white;
+  border-bottom: 2px solid #2f6740;
+  color: black;
+}
+
+/* Navigation container */
+.nav-container {
+  display: flex;
+  gap: 80px;
+  justify-content: center;
+  width: 100%;
+  padding: 10px 0;
+}
+
+/* Button styles */
+.nav-container button {
+  border: 2px solid transparent;
+  border-radius: 20px;
+  /* Circular edges */
+  color: #2f6740;
+  /* Match one of the border colors */
+  font-size: 16px;
+  padding: 10px 20px;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  /* Smooth transition */
+  font-weight: 600;
+}
+
+/* Button hover effect */
+.nav-container button:hover {
+  border-color: #2f6740;
+  ;
+  /* Match the text color */
+  color: white;
+  background-color: #2f6740a0;
+  /* Match the text color */
+}
+
+/* Active button styles */
+.nav-container .active-button {
+  border-color: #2f6740;
+  /* Match another color in the border gradient */
+  color: white;
+  background-color: #38774b;
+  /* Match the border color */
+}
+
+.home {
+  position: relative;
+  color:#2f6740;
+  /* top: 2px; */
+  left: 20px;
+}
+
+.home-container:hover{
+  background-color: white !important;
+  border: none !important;
+  border-radius: none !important;
+}
+
+.avatar {
+  position: relative;
+  top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px; /* Adjust size as needed */
+  height: 45px; /* Adjust size as needed */
+  border-radius: 50%;
+  background-color: #38774b; /* Example background color */
+  color: white;
+  font-size: 2em;
+}

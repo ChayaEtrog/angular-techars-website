@@ -1,0 +1,69 @@
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav mode="side" opened class="full-height-sidenav">
+    <mat-nav-list>
+      @for(student of studentList; track student.id){
+      <mat-list-item (click)="selectedStudent=student">
+        <mat-icon mat-list-icon>person</mat-icon>
+        <span mat-line>{{ student.firstName }} {{ student.lastName }}</span>
+      </mat-list-item>
+      }
+      <mat-list-item style="background-color: #2f6740; border-radius: 0cm;" (click)="isAdd = !isAdd">
+        <mat-icon style="color:white">add</mat-icon> <span style=" color:white; font-size: 20px;">add student</span>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    @if(isAdd){
+    <app-student-details [courseList]="courseList" (ChildSaveStudent)="parentSaveStudent($event)">
+    </app-student-details>
+    }
+    @if(selectedStudent&&!isAdd){
+    <div>
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>{{ selectedStudent.firstName }} {{ selectedStudent.lastName }}</mat-card-title>
+          <mat-card-subtitle>Details of the student</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p> id: {{selectedStudent.id}}</p>
+          <p> address: {{selectedStudent.address}}</p>
+          <p> phon number: {{selectedStudent.phonNumber}}</p>         
+          @if(selectedStudent.flagPayed){
+            <p>selected courses:</p>
+            <mat-chip-listbox>
+          @for (course of selectedStudent.selctedCourse; track $index) {
+              <mat-chip>{{course.courseName}}</mat-chip>
+            }
+          </mat-chip-listbox>
+          }
+          <!-- buttons for delete and edit -->
+          <button mat-raised-button color="warn" (click)="openDeleteDialog(selectedStudent)">
+            {{ buttonDelete | icon }}
+          </button>
+          <button mat-raised-button color="primary" (click)="selectedStudent.flagEdit = !selectedStudent.flagEdit">
+            {{ buttonEdit | icon }}
+          </button>
+
+          @if(selectedStudent.flagEdit){
+          <app-student-details 
+            [id]="selectedStudent.id" [firstName]="selectedStudent.firstName"
+            [lastName]="selectedStudent.lastName" [address]="selectedStudent.address"
+            [phonNumber]="selectedStudent.phonNumber" [isActive]="selectedStudent.isActive"
+            [payed]="selectedStudent.flagPayed" [courseList]="courseList"
+            [selectedCourse]="selectedStudent.selctedCourse" 
+            [dateLefting]="selectedStudent.dateLefting"
+            (ChildSaveStudent)="parentSaveStudent($event)">
+          </app-student-details>
+          }
+        </mat-card-content>
+      </mat-card>
+    </div>
+    }
+    @if(!selectedStudent&&!isAdd){
+    <div>
+      <h1 style="margin-left: 420px; color:#2f6740;">Select a student to see details</h1>
+    </div>
+    }
+  </mat-sidenav-content>
+</mat-sidenav-container>

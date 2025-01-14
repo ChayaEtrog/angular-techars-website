@@ -1,0 +1,56 @@
+/* Overlay to freeze the background and add opacity */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.066);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+  }
+  
+  /* Main Form Container */
+  .student-form {
+    width: 400px;
+    max-height: 95vh;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: auto;
+    z-index: 11;
+  }
+  
+  /* Form Fields */
+  .form-field {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  
+  /* Checkbox Grid */
+  .checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    max-height: 200px; /* Restrict height for scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  
+  /* Card Actions */
+  mat-card-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+   
+  }
+
+  .submit-button{
+    background-color: #7071703a;
+    border-radius: 20px;
+    margin-right: 5px;
+  }

@@ -1,0 +1,53 @@
+<div class="home-page">
+    <!-- Top Banner -->
+    <div class="banner">
+        <img src="assets/pictures/logo.jpg" alt="School Banner">
+        <div class="banner-text">
+            <h1>Welcome to Your Teacher Portal</h1>
+            <p>Your one-stop destination for managing student details and professional resources.</p>
+        </div>
+    </div>
+
+    <!-- Lecture Section -->
+    <section class="lectures">
+        <h2>Lectures for You</h2>
+        <div class="lecture-carousel">
+    
+          <!-- Left Arrow -->
+          <button mat-icon-button (click)="scrollLeft()" class="arrow left" [disabled]="currentIndex === 0">
+            <mat-icon>arrow_back</mat-icon>
+          </button>
+    
+          <!-- Horizontal Scrollable List of Lectures -->
+          <div class="lecture-list">
+              @for (lecture of lectures; track $index) {
+            <a  [href]="lecture.link" target="_blank">
+              <mat-card class="lecture-card">
+                <img mat-card-image [src]="lecture.thumbnail" alt="Lecture Thumbnail" class="lecture-thumbnail">
+                <mat-card-title>{{ lecture.title }}</mat-card-title>
+              </mat-card>
+            </a>
+          }
+          </div>
+    
+          <!-- Right Arrow -->
+          <button mat-icon-button (click)="scrollRight()" class="arrow right" [disabled]="currentIndex === allLectures.length - 1">
+            <mat-icon>arrow_forward</mat-icon>
+          </button>
+    
+        </div>
+      </section>
+
+    <!-- Footer -->
+    <footer>
+        <h3>Our Branches</h3>
+        <div class="branches">
+            @for(branch of branches; track branch){
+            <mat-card class="branch-card">
+                <mat-card-title>{{ branch.name }}</mat-card-title>
+                <mat-card-content ard-content>{{ branch.address }}</mat-card-content>
+            </mat-card>
+            }
+        </div>
+    </footer>
+</div>

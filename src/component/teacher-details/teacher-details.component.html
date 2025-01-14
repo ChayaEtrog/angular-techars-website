@@ -1,0 +1,38 @@
+<form #form="ngForm" (ngSubmit)="saveTeacher()" class="teacher-form">
+    
+    <mat-form-field class="form-field">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" #nameC="ngModel" name="name" [(ngModel)]="name" required>
+        @if(nameC?.invalid && nameC?.touched && nameC?.hasError('required')) {
+                <mat-error>Name is required</mat-error>
+        }
+        @if(nameC?.hasError('pattern')) {
+            <mat-error>Name must contain only letters</mat-error>
+        }
+      </mat-form-field>
+
+    <mat-form-field class="form-field">
+      <mat-label>Id</mat-label>
+      <input matInput type="text" #idC="ngModel" name="id" [(ngModel)]="id" required>
+      @if(idC?.invalid && idC?.touched) {
+        <mat-error>ID is required</mat-error>
+      }
+    </mat-form-field>
+  
+   <div class="checkbox-grid">
+    @for(classId of classesId; track $index) {
+      <mat-checkbox 
+        [checked]="classes.includes(classId)"
+        (change)="toggleClassSelection(classId, $event.checked)" 
+        class="checkbox">
+        {{classId.grade}} grade
+      </mat-checkbox>
+    }
+    </div>
+  
+    <div class="submit-button-div">
+      <button class="submit-button" mat-raised-button type="submit" [disabled]="form.invalid">Save</button>
+      <button mat-button class="submit-button" (click)="cancelFunc()">cancel</button>
+    </div>
+
+  </form>

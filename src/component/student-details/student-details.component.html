@@ -1,0 +1,82 @@
+<div class="overlay">
+    <div class="student-form">
+        <mat-card>
+            <mat-card-content>
+                <!-- ID -->
+                <mat-form-field class="form-field" appearance="outline">
+                    <mat-label>Student ID</mat-label>
+                    <input matInput type="text" #idInput [value]="id" [disabled]="!!id">
+                </mat-form-field>
+
+                <!-- First Name -->
+                <mat-form-field class="form-field" appearance="outline">
+                    <mat-label>First Name</mat-label>
+                    <input matInput type="text" #fName [value]="firstName">
+                </mat-form-field>
+
+                <!-- Last Name -->
+                <mat-form-field class="form-field" appearance="outline">
+                    <mat-label>Last Name</mat-label>
+                    <input matInput type="text" #lName [value]="lastName">
+                </mat-form-field>
+
+                <!-- Address -->
+                <mat-form-field class="form-field" appearance="outline">
+                    <mat-label>Address</mat-label>
+                    <input matInput type="text" #a [value]="address">
+                </mat-form-field>
+
+                <!-- Phone Number -->
+                <mat-form-field class="form-field" appearance="outline">
+                    <mat-label>Phone Number</mat-label>
+                    <input matInput type="text" #pNumber [value]="phonNumber">
+                </mat-form-field>
+
+                <!-- Is Active -->
+                <mat-checkbox [(ngModel)]="isActive" #isAct>Is Active</mat-checkbox>
+
+                <!-- Payed -->
+                <mat-checkbox [(ngModel)]="payed" #pay>Payed</mat-checkbox>
+
+                <!-- Lefting Date -->
+                @if(!isAct.checked) {
+                <mat-form-field class="form-field" appearance="outline">
+                    <mat-label>Lefting Date</mat-label>
+                    <input matInput type="date" #lDate>
+                </mat-form-field>
+                }
+
+                <!-- Courses -->
+                <ng-template #showCourses>
+                    <div>
+                        <h2>Select Courses</h2>
+                        <div class="checkbox-grid scrollable-courses">
+                            @for (course of courseList; track $index) {
+                            <mat-checkbox 
+                                [checked]="isCourseSelected(course)"
+                                (change)="toggleCourseSelection(course, $event.checked)">
+                                {{ course.courseName }}
+                            </mat-checkbox>
+                            }
+                        </div>
+                    </div>
+                </ng-template>
+                @if(payed) {
+                    <button (click)="log(selectedCourse)">log</button>
+                <ng-container *ngTemplateOutlet="showCourses"></ng-container>
+                }
+            </mat-card-content>
+
+            <mat-card-actions>
+                <button mat-raised-button class="submit-button"
+                    (click)="SaveStudent(idInput.value, fName.value, lName.value, a.value, pNumber.value, isAct.checked, pay.checked, selectedCourse)">
+                    Save
+                </button>
+                <button mat-raised-button class="submit-button"
+                    (click)="cancelEdit()">
+                    Cancel
+                </button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>

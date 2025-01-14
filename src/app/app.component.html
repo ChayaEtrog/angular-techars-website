@@ -1,0 +1,26 @@
+<mat-toolbar class="custom-toolbar">
+  <mat-toolbar-row>
+
+    <mat-icon class="home" routerLink="/home" routerLinkActive="active-button">
+      home
+    </mat-icon>
+
+    <nav class="nav-container">
+      <button mat-button routerLink="/teacher" routerLinkActive="active-button" aria-current="page">
+        Teacher
+      </button>
+      <button mat-button routerLink="/user" routerLinkActive="active-button" aria-current="page">
+        User
+      </button>
+      <button mat-button routerLink="/student" routerLinkActive="active-button" aria-current="page">
+        Student
+      </button>
+    </nav>
+
+    <div mat-card-avatar class="avatar">
+      {{ userName[0] }}
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

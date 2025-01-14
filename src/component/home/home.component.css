@@ -1,0 +1,182 @@
+.lecture-thumbnail {
+  width: 300px;
+  /* Fixed width */
+  height: 120px;
+  /* Fixed height */
+  object-fit: cover;
+  /* Maintain aspect ratio */
+}
+
+/*Flexbox layout for the carousel */
+.lecture-carousel {
+  min-height: 250px;
+  overflow: hidden;
+  position: relative;
+  margin: 0
+}
+
+.lecture-list {
+  gap: 15px;
+  height: 250px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.lecture-card {
+  flex: 0 0 auto;
+  /* Prevent cards from shrinking or growing */
+  margin-right: 10px;
+  /* Space between cards */
+  width: 300px;
+  height: 250px;
+}
+a{
+  text-decoration: none !important;
+}
+
+/* Arrow styles */
+.arrow {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  padding: 10px;
+}
+
+.left {
+  left: 10px;
+}
+
+.right {
+  right: 10px;
+}
+
+
+.home-page {
+  font-family: Arial, sans-serif;
+  background-color: #f0ffe0;
+  /* Green-yellow background */
+  color: #333;
+
+}
+
+/* Banner Section */
+.banner {
+  position: relative;
+  width: 100%;
+  height: 75vh;
+  overflow: hidden;
+}
+
+.lectures {
+  padding: 20px;
+  text-align: center;
+}
+
+/* Add some spacing and styling for better presentation */
+footer {
+  margin-top: 20px;
+}
+
+.home-page {
+  font-family: Arial, sans-serif;
+  background-color: #f0ffe0;
+  color: #333;
+  padding: 0;
+  margin: 0;
+}
+
+/* Banner Section */
+.banner {
+  position: relative;
+  width: 100%;
+  height: 540px;
+  overflow: hidden;
+}
+
+.banner img {
+  width: 65vw;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner-text {
+  position: absolute;
+  top: 0;
+  left: 65vw;
+  width: 40vw;
+  height: 100%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  /* מסדר את תוכן הטקסט כ-Flexbox */
+  flex-direction: column;
+  /* מוודא שכל השורות מסודרות בעמודה */
+  align-items: center;
+  /* ממרכז אופקית את התוכן */
+  justify-content: center;
+  /* ממרכז אנכית את התוכן */
+  text-align: center;
+  /* ממרכז טקסט בתוך השורות */
+  max-width: 500px;
+  /* מגביל את רוחב הטקסט */
+  word-wrap: break-word;
+  /* דואג לשבור שורות במקרה הצורך */
+  padding: 20px;
+}
+
+.banner-text h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+.banner-text p {
+  margin: 10px 0 0;
+  font-size: 1.2rem;
+}
+
+/* Lecture Section */
+.lectures {
+  padding: 20px;
+  text-align: center;
+}
+
+.lecture-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.lecture-card mat-card-title {
+  font-size: 1.2rem;
+  font-weight: 550;
+  color: #333;
+}
+
+/* Footer Section */
+footer {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  text-align: center;
+}
+
+footer h3 {
+  margin-bottom: 10px;
+}
+
+.branches {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.branch-card {
+  width: 200px;
+  padding: 10px;
+  text-align: left;
+  background-color: #f7f7f7;
+}

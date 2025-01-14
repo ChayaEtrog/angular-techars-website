@@ -1,0 +1,62 @@
+
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav mode="side" opened class="full-height-sidenav">
+    <mat-nav-list>
+      @for (teacher of teachers; track teacher.id) {
+      @if(teacher.classId==null||teacher.classId.length==0){
+      <mat-list-item (click)="selectedTeacher=teacher">
+        <mat-icon mat-list-icon>person</mat-icon>
+        <span mat-line appColorInGray>{{teacher.name}}</span>
+      </mat-list-item>
+      }
+      @else {
+      <mat-list-item (click)="selectedTeacher=teacher">
+        <mat-icon mat-list-icon>person</mat-icon>
+        <span mat-line>{{teacher.name}}</span>
+      </mat-list-item>
+      }
+      }
+      <mat-list-item style="background-color: #2f6740; border-radius: 0cm;" (click)="isAdd = !isAdd">
+        <mat-icon style="color:white">add</mat-icon><span style="color: white; font-size: 20px;">add teacher</span> 
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    @if(isAdd){
+    <app-teacher-details (ChildSaveTechaer)="parentSaveTeacher($event)"> </app-teacher-details>
+    }
+    @if(selectedTeacher &&!isAdd){
+      <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{ selectedTeacher.name }}</mat-card-title>
+      <mat-card-subtitle>Details of the teacher</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>id: {{ selectedTeacher.id }}</p>
+      @if(selectedTeacher.classId==null||selectedTeacher.classId.length==0){
+      <p>No classes assigned.</p>}
+      @else {
+      <p>Classes:</p>
+      <mat-chip-listbox>
+        @for (class of selectedTeacher.classId; track $index) {
+        <mat-chip>{{class.grade}}</mat-chip>
+        }
+      </mat-chip-listbox>
+      }
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-raised-button color="warn" (click)="openDeleteDialog(selectedTeacher)">
+        {{ buttonDelete | icon }}
+      </button>
+    </mat-card-actions>
+    </mat-card>
+    }
+    @if(!selectedTeacher&&!isAdd){
+      <div>
+        <h1 style="margin-left: 420px; color:#2f6740;">Select a teacher to see details</h1>
+      </div>
+      }
+  </mat-sidenav-content>
+</mat-sidenav-container>
