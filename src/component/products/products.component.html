@@ -1,0 +1,11 @@
+<div class="lecture-list">
+    @for (product of products; track $index) {
+    <a [routerLink]="['/products', product.id]">
+        <mat-card class="lecture-card">
+            <img mat-card-image [src]="product.thumbnail" alt="product Thumbnail" class="lecture-thumbnail">
+            <mat-card-title class="product-name">{{ product.name }} </mat-card-title>
+            <div class="price-overlay">price: {{ product.price }}$</div>
+        </mat-card>
+    </a>
+    }
+</div>

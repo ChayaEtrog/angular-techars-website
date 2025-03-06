@@ -99,9 +99,6 @@ export class StudentComponent {
       this.studentList[index].flagPayed = student.flagPayed
       this.studentList[index].selctedCourse = student.selctedCourse
       this.studentList[index].flagEdit = false;
-      console.log(this.selectedStudent.selectedCourse);
-      
-
     } else {
 
       this.studentList.push(student);

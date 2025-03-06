@@ -58,7 +58,7 @@ a{
   font-family: Arial, sans-serif;
   background-color: #f0ffe0;
   /* Green-yellow background */
-  color: #333;
+  color: #333333e3;
 
 }
 
@@ -111,29 +111,23 @@ footer {
   color: white;
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
-  /* מסדר את תוכן הטקסט כ-Flexbox */
   flex-direction: column;
-  /* מוודא שכל השורות מסודרות בעמודה */
   align-items: center;
-  /* ממרכז אופקית את התוכן */
   justify-content: center;
-  /* ממרכז אנכית את התוכן */
   text-align: center;
-  /* ממרכז טקסט בתוך השורות */
   max-width: 500px;
-  /* מגביל את רוחב הטקסט */
   word-wrap: break-word;
-  /* דואג לשבור שורות במקרה הצורך */
   padding: 20px;
 }
 
 .banner-text h1 {
-  margin: 0;
+
+  margin-top: 5px;
   font-size: 2.5rem;
 }
 
 .banner-text p {
-  margin: 10px 0 0;
+  margin: 10px 5px 2px;
   font-size: 1.2rem;
 }
 

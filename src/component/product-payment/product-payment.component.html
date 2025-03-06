@@ -1,0 +1,11 @@
+<div class="product-container">
+    <img [src]="product?.thumbnail" alt="product Thumbnail" class="product-thumbnail" />
+    <div class="left-container">
+        <div class="product-details">
+            <div> {{product?.name}}</div>
+            <mat-divider></mat-divider>
+            <div>price: {{product?.price}}</div>
+        </div>
+        <button mat-button>Buy Now</button>
+    </div>
+</div>

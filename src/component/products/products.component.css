@@ -1,0 +1,76 @@
+.lecture-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    padding: 40px;
+}
+
+.lecture-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* מרכז טקסט */
+    width: 100%;
+    /* מתאים לרוחב רשת */
+    max-width: 300px;
+    /* מגביל את רוחב הכרטיס */
+    margin: 0 auto;
+    /* מרכז את הכרטיס */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* הצללה */
+    border-radius: 10px;
+    /* פינות מעוגלות */
+    height: 440px;
+}
+
+.lecture-thumbnail {
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+}
+
+mat-card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.price {
+    font-size: 16px;
+    color: #555;
+}
+
+.product-link {
+    text-decoration: none;
+}
+
+.price-overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    padding: 25px 0;
+    opacity: 0;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.lecture-card:hover .price-overlay {
+    opacity: 1;
+}
+
+.product-name {
+    position: absolute;
+    bottom: 0;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 2px 0;
+    font-weight: normal !important;
+  }
+  

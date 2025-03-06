@@ -52,12 +52,12 @@
 
 .home {
   position: relative;
-  color:#2f6740;
+  color: #2f6740;
   /* top: 2px; */
   left: 20px;
 }
 
-.home-container:hover{
+.home-container:hover {
   background-color: white !important;
   border: none !important;
   border-radius: none !important;
@@ -69,10 +69,30 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 45px; /* Adjust size as needed */
-  height: 45px; /* Adjust size as needed */
+  width: 45px;
+  /* Adjust size as needed */
+  height: 45px;
+  /* Adjust size as needed */
   border-radius: 50%;
-  background-color: #38774b; /* Example background color */
+  background-color: #38774b;
+  /* Example background color */
   color: white;
   font-size: 2em;
+}
+
+#popup-logout {
+  position: fixed ;
+  top:60px;
+  right: 5px;
+  padding:3px;
+  background-color: #38774b !important; 
+  opacity: 1 !important;
+  z-index: 100;
+  color:  #FFFFFF; 
+  border-radius: 8px; 
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+  font-size: 16px;
+  display: inline-flex; 
+  align-items: center; 
+  gap: 8px; 
 }

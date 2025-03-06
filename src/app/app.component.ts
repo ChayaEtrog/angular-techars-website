@@ -12,19 +12,20 @@ import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-root',
-  standalone: true, 
-  imports: [RouterOutlet, RouterLink, RouterLinkActive,MatToolbarModule, MatButtonModule,MatIconModule, MatCardModule],
+  standalone: true,
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, MatToolbarModule, MatButtonModule, MatIconModule, MatCardModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
 
-  constructor(private authService:AuthService){}
-   userName:string=this.authService.username;
+  constructor(private authService: AuthService) { }
 
-   ngOnInit() {
+  userName: string = this.authService.username;
+  isAvatarClicked: boolean = false;
+  ngOnInit() {
     this.authService.username$.subscribe((username) => {
-      this.userName = username; // עדכון הערך באופן אוטומטי
+      this.userName = username;
     });
   }
 }

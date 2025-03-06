@@ -7,6 +7,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { MatError } from '@angular/material/form-field';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-login',

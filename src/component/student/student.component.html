@@ -28,12 +28,12 @@
         <mat-card-content>
           <p> id: {{selectedStudent.id}}</p>
           <p> address: {{selectedStudent.address}}</p>
-          <p> phon number: {{selectedStudent.phonNumber}}</p>         
+          <p> phon number: {{selectedStudent.phonNumber}}</p>
           @if(selectedStudent.flagPayed){
-            <p>selected courses:</p>
-            <mat-chip-listbox>
-          @for (course of selectedStudent.selctedCourse; track $index) {
-              <mat-chip>{{course.courseName}}</mat-chip>
+          <p>selected courses:</p>
+          <mat-chip-listbox>
+            @for (course of selectedStudent.selctedCourse; track $index) {
+            <mat-chip>{{course.courseName}}</mat-chip>
             }
           </mat-chip-listbox>
           }
@@ -46,13 +46,11 @@
           </button>
 
           @if(selectedStudent.flagEdit){
-          <app-student-details 
-            [id]="selectedStudent.id" [firstName]="selectedStudent.firstName"
+          <app-student-details [id]="selectedStudent.id" [firstName]="selectedStudent.firstName"
             [lastName]="selectedStudent.lastName" [address]="selectedStudent.address"
             [phonNumber]="selectedStudent.phonNumber" [isActive]="selectedStudent.isActive"
             [payed]="selectedStudent.flagPayed" [courseList]="courseList"
-            [selectedCourse]="selectedStudent.selctedCourse" 
-            [dateLefting]="selectedStudent.dateLefting"
+            [selectedCourse]="selectedStudent.selctedCourse" [dateLefting]="selectedStudent.dateLefting"
             (ChildSaveStudent)="parentSaveStudent($event)">
           </app-student-details>
           }

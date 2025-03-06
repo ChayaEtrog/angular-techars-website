@@ -1,0 +1,49 @@
+.product-container {
+    display: flex;
+    height: max-content;
+}
+
+.product-thumbnail {
+    margin-left: 40px;
+    margin-top: 50px;
+    height: 70vh;
+    /* Full height of the container */
+    width: 50vw;
+    /* Maintain aspect ratio */
+    object-fit: cover;
+    /* Cover the container without stretching */
+}
+
+.left-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 16px;
+    flex: 1;
+    /* Take up remaining space */
+}
+
+
+button:hover {
+    border-color: #2f6740;
+    /* Match the text color */
+    color: white;
+    background-color: #2f6740a0;
+    /* Match the text color */
+}
+
+/* Active button styles */
+button {
+    border-color: #2f6740;
+    /* Match another color in the border gradient */
+    color: white;
+    background-color: #38774b;
+    border-radius: 20px;
+}
+
+
+.product-details {
+    padding: 16px;
+    right: 25vw;
+    font-size: 20px;
+}

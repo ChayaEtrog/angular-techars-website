@@ -15,11 +15,21 @@
       <button mat-button routerLink="/student" routerLinkActive="active-button" aria-current="page">
         Student
       </button>
+      <button mat-button routerLink="/products" routerLinkActive="active-button" aria-current="page">
+        Products
+      </button>
     </nav>
 
-    <div mat-card-avatar class="avatar">
+    <div mat-card-avatar class="avatar" (click)="isAvatarClicked=!isAvatarClicked">
       {{ userName[0] }}
     </div>
+    @if(isAvatarClicked){
+    <div id="popup-logout" routerLink="/auth" routerLinkActive="active-button">
+      log out
+      <mat-icon>logout</mat-icon>
+      
+    </div>
+    }
   </mat-toolbar-row>
 </mat-toolbar>
 
